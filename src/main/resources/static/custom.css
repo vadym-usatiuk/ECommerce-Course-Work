@@ -1,0 +1,15 @@
+a.username {
+  color: rgb(192, 192, 192);
+}
+
+b.tag {
+  color: white;
+}
+
+.indexHead {
+	height: 100vh;
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}

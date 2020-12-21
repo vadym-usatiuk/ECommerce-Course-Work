@@ -1,0 +1,32 @@
+<div th:fragment="productFields">
+	<tr>
+		<td>Product Name:</td>
+		<td><input id="entryField" class="form-control" type="text"
+			th:placeholder="${name}" th:field="*{name}" /></td>
+	</tr>
+	<tr>
+		<td>Wholesale Price:</td>
+		<td><input id="entryField" class="form-control" type="text"
+			th:placeholder="${wholesalePrice}" th:field="*{wholesalePrice}" /></td>
+	</tr>
+	<tr>
+		<td>Retail Price:</td>
+		<td><input id="entryField" class="form-control" type="text"
+			th:placeholder="${retailPrice}" th:field="*{retailPrice}" /></td>
+	</tr>
+	<tr>
+		<td>Brand name:</td>
+		<td><input id="entryField" class="form-control" type="text"
+			th:placeholder="${brand}" th:field="*{brand}" /></td>
+	</tr>
+	<tr>
+		<td>Product Description:</td>
+		<td><input id="entryField" class="form-control" type="text"
+			th:placeholder="${description}" th:field="*{description}" /></td>
+	</tr>
+	<tr>
+		<td>Image URL:</td>
+		<td><input id="entryField" class="form-control" type="text"
+			th:placeholder="${image}" th:field="*{image}" /></td>
+	</tr> <!-- Not sure how to let user upload image -->
+</div>

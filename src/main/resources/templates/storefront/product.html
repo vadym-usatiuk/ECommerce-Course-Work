@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Product</title>
+<link th:replace="fragments/head">
+</head>
+<body>
+	<div class="container-fluid">
+		<div th:replace="fragments/navbar"></div>
+		<h2>Users</h2>
+		<div class="list-group" th:each="product:${products}">
+			<a th:href="@{/products/} + ${product.id}"
+				class="list-group-item list-group-item-action">
+				<div class="row">
+					<div class="col col-sm-6">
+						<h5 class="mb-1">
+							<span th:text="${product.name}"></span>
+						</h5>
+						<h5 class="mb-1">
+							Cost: <span th:text="${product.retailPrice}"></span>
+						</h5>
+						<h5 class="mb-1">
+							Description: <span th:text="${product.description}"></span>
+						</h5>
+						<img th:src="@{'/uploads/' + ${product.image}}"/> <!-- TODO not sure how this'll work -->
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<script th:replace="fragments/scripts"></script>
+</body>
+</html>

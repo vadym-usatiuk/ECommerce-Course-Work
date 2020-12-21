@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Your Order</title>
+<body>
+	<div class="list-group" th:each="product:${cart}">
+		<div class="list-group-item list-group-item-action">
+			<div class="d-flex w-100 justify-content-between">
+				<a class="id" th:href="@{/products/} + ${products.id}">
+					<h5>
+						<span th:text="${product.name}"></span>
+					</h5>
+					<h5>
+					 <span th:text="${product.retailPrice}"></span>
+					</h5>
+				</a>
+			</div>
+		</div>
+		<div th:if="${#lists.isEmpty(cart)}">
+			<h3>You have nothing in your cart.</h3>
+		</div>
+	</div>
+	<form>
+		<button class="btn btn-md btn-primary btn-block" type="Submit">Buy!</button>
+	</form>
+</body>
+</html>

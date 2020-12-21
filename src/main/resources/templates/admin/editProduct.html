@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+<link th:replace="fragments/head">
+</head>
+<body>
+	<div class="container-fluid">
+		<div th:replace="fragments/navbar"></div>
+		
+		<p>Please use the form below to edit a product:</p>
+		<form action="#" th:action="@{/products}" th:object="${product}"
+			method="post">
+			<table class="form-group">
+				<div th:replace="fragments/productFields"></div>
+				<tr>
+					<td><button type="submit" class="btn btn-sm btn-warning">Submit</button></td>
+				</tr>
+			</table>
+		</form>
+		
+	</div>
+	<script th:replace="fragments/scripts"></script>
+</body>
+</html>

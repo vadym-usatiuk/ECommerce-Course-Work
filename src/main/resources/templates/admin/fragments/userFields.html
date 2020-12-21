@@ -1,0 +1,14 @@
+<div th:fragment="userFields">
+	<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+		class="validation-message"></label> <input type="text"
+		th:field="*{name}" placeholder="Name" class="form-control" /> <label
+		th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+		class="validation-message"></label> <input type="text"
+		th:field="*{username}" placeholder="Username" class="form-control" />
+	<label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+		class="validation-message"></label> <input type="text"
+		th:field="*{email}" placeholder="Email" class="form-control" /> <label
+		th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+		class="validation-message"></label> <input type="password"
+		th:field="*{password}" placeholder="Password" class="form-control" />
+</div>

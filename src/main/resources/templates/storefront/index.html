@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+<link th:replace="fragments/head">
+</head>
+<body>
+	<div class="container-fluid">
+		<div th:replace="fragments/navbar"></div>
+		<div class="indexHead">
+			<div class="indexHeadText">
+				<h1>All You Could Need.</h1>
+				<p>You can buy anything you need on this website.</p>
+			</div>
+			<img
+				src="https://via.placeholder.com/300x150.png/000000/FFFFFF?text=Product+Image+Here"
+				alt="productExample">
+		</div>
+		<h3>Products:</h3>
+		<div class="list-group">
+			<div th:each="product:${products}">
+				<a th:href="@{/products/} + ${product.id}"
+					class="list-group-item list-group-item-action"> <span
+					th:text="${product.name}"></span> Description: <span
+					th:text="${article.description}"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script th:replace="fragments/scripts"></script>
+</body>
+</html>
